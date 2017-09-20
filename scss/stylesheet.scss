@@ -1,0 +1,954 @@
+@charset "UTF-8";
+@import url(../fonts/css/fontello.css);
+
+@font-face {
+    font-family: 'cocobikerbold';
+    src: url('cocobiker_bold-webfont.woff2') format('woff2'),
+         url('cocobiker_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*----------------------------
+------------------------------
+Table of Content:
+
+1. General
+2. Background
+3. Nav
+4. Header/Footer
+5. Sections
+6. Media Queries
+
+----------------------------*/
+
+/* 1. General
+----------------------------*/
+$White: #fff;
+$Cloud: #c6c3bb;
+$DonkeyBrown: #a59482;
+$Jumbo: #77777a;
+$EbonyClay: #222944;
+$GunPowder: #45475b;
+$Deluge: #7764a0;
+
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  &::after, &::before {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+}
+
+html {
+  font-size: 90%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body {
+  margin: 0px auto;
+  padding: 0px;
+  background-color: $White;
+  background-image: url(../assets/subtle-texture-1.png);
+  background-size: 100%;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#page {
+  margin: 0px auto;
+}
+
+div.clear {
+  clear: both;
+}
+
+ul {
+  margin-top: 10px;
+  margin-left: 15px;
+  text-decoration: none;
+  list-style: none;
+  li {
+    font-family: "Cochin", serif;
+    font-weight: 700;
+    font-size: .875rem;
+    color: $Jumbo;
+    display: block;
+    margin-bottom: 5px;
+    text-decoration: none;
+    list-style: none;
+  }
+}
+
+a {
+  font-family: "Cochin", serif;
+  font-weight: bold;
+  font-size: .75rem;
+  letter-spacing: .1rem;
+  color: $Jumbo;
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  cursor: inherit;
+  cursor: pointer;
+  &:hover {
+    color: $EbonyClay;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+}
+
+input[type="button" i], button {
+  font-family: "Cochin", serif;
+  font-size: .875rem;
+  letter-spacing: .05rem;
+  width: 200px;
+  align-items: flex-start;
+  text-align: center;
+  cursor: default;
+  color: $White;
+  background-color: $DonkeyBrown;
+  box-sizing: border-box;
+  padding: 10px 0px;
+  border: none;
+  border-width: 0px;
+  border-style: none;
+  border-radius: 0px;
+  border-color: none;
+  border-image: none;
+  box-shadow: none;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+}
+
+.start {
+  max-width: 300px;
+  position: relative;
+  display: inline-block;
+  padding: 0px;
+  margin-top: 20px;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  button:hover {
+    cursor: default;
+    cursor: pointer;
+    background-color: $Deluge;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+}
+
+h2 {
+  font-family: "CocoBikeR", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: $GunPowder;
+  text-align: left;
+  max-width: 360px;
+  width: 100%;
+  padding: 0px;
+  margin: 10px 0px;
+  margin-bottom: 20px;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+}
+
+h3 {
+  font-family: "Cochin", serif;
+  font-weight: bold;
+  font-size: .875rem;
+  letter-spacing: .11rem;
+  text-transform: uppercase;
+  text-align: left;
+  color: $DonkeyBrown;
+  padding: 0px;
+  margin: 10px 0px;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+}
+
+p {
+  font-family: "Cochin", serif;
+  font-weight: 700;
+  font-size: .625rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-align: left;
+  color: $Jumbo;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+}
+
+/* 2. Background
+----------------------------*/
+
+.subtle-image-texture {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-image: url(../assets/subtle-image-texture.png);
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: .5;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+}
+
+.footer-noise {
+  height: 250px;
+  width: 650px;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  background-image: url(../assets/footer-noise.png);
+  background-size: 90%;
+  background-position: left;
+  background-repeat: no-repeat;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+}
+
+.lorem-texture {
+  height: 100px;
+  width: 500px;
+  position: fixed;
+  left: 0px;
+  bottom: 180px;
+  background-image: url(../assets/Lorem-texture-bg.png);
+  background-size: 100%;
+  background-position: left;
+  background-repeat: no-repeat;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+}
+
+.Signs-texture {
+  height: 800px;
+  width: 500px;
+  position: fixed;
+  right: 50px;
+  top: -30px;
+  padding: 30px;
+  margin-left: auto;
+  background-image: url(../assets/Signs-texture-bg.png);
+  background-size: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+}
+
+.prologue-noise {
+  height: 187px;
+  width: 400px;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  background-image: url(../assets/prologue-noise.png);
+  background-size: 60%;
+  background-position: right;
+  background-repeat: no-repeat;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+}
+
+/* 3. Nav
+----------------------------*/
+
+/* 4. Header/footer
+----------------------------*/
+
+.icon-aura-crate-mark {
+  color: $DonkeyBrown;
+  font-size: 7rem;
+  margin-left: -10px;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  margin-right: 0em;
+  text-align: center;
+  opacity: 1;
+  margin-left: 0em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: none;
+}
+
+header {
+  clear: both;
+  position: fixed;
+  top: 0px;
+  padding: 30px 40px;
+  z-index: 1;
+}
+
+.header {
+  width: 100%;
+  position: relative;
+  display: block;
+}
+
+.header--logo {
+  width: 25%;
+  display: block;
+  float: left;
+}
+
+.header--admin {
+  width: 75%;
+  display: block;
+  float: left;
+  text-align: right;
+  a {
+    display: inline-block;
+    text-transform: uppercase;
+  }
+}
+
+a.gold {
+  &::after {
+    content: '';
+    height: 8px;
+    width: 100%;
+    position: relative;
+    display: block;
+    margin-top: 5px;
+    background-image: url(../assets/underline-01.svg);
+    background-size: 110%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all .5s ease;
+  }
+  color: $DonkeyBrown;
+  &:hover {
+    color: $Deluge;
+    &::after {
+      content: '';
+      height: 8px;
+      width: 100%;
+      position: relative;
+      display: block;
+      background-image: url(../assets/underline-02.svg);
+      background-size: 110%;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: all .5s ease;
+    }
+  }
+}
+
+footer {
+  clear: both;
+  position: fixed;
+  bottom: 0px;
+  padding: 30px 40px;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+}
+
+.footer--epilogue {
+  width: 45%;
+  position: relative;
+  display: block;
+  float: left;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+}
+
+.footer--wrap {
+  width: 55%;
+  position: relative;
+  display: block;
+  float: left;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+}
+
+.footer--social {
+  width: 25%;
+  text-align: center;
+  position: relative;
+  display: block;
+  float: left;
+  margin-top: -10px;
+}
+
+.footer--copy {
+  width: 75%;
+  font-family: "Cochin", serif;
+  font-weight: 700;
+  font-size: .625rem;
+  color: $Jumbo;
+  text-transform: uppercase;
+  text-align: right;
+  position: relative;
+  display: block;
+  float: left;
+  margin-top: 10px;
+}
+
+.footer--social a:hover {
+  color: $DonkeyBrown;
+}
+
+.icon-aura-crate-ig {
+  font-size: 1.5rem;
+}
+
+.icon-aura-crate-fb, .icon-aura-crate-tweet {
+  font-size: 1.25rem;
+}
+
+/* 5. Section
+----------------------------*/
+
+.content-image {
+  position: absolute;
+  float: right;
+  right: 0px;
+  top: -50px;
+  width: 48%;
+  padding: 20px 1%;
+  display: block;
+  height: auto;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  &:hover {
+    right: 20px;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  img {
+    width: 90%;
+    position: relative;
+    display: block;
+    margin-right: auto;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+}
+
+.content-info {
+  width: 45%;
+  position: absolute;
+  left: 200px;
+  top: 50px;
+  float: right;
+  padding: 20px 1%;
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  p {
+    max-width: 70%;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+}
+
+/* 6. Media Queries
+----------------------------*/
+@media (min-width: 1440px) {}
+
+@media (min-width: 1152px) and (max-width: 1280px) {
+  /* NOTE: Footer floats */
+  .footer--wrap {
+    width: 55%;
+    float: left;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .footer--epilogue {
+    width: 45%;
+    float: left;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .footer--social {
+    width: 25%;
+    float: left;
+    text-align: center;
+  }
+  .footer--copy {
+    text-align: right;
+    width: 75%;
+    float: left;
+    margin-left: auto;
+  }
+  /* NOTE: sections/individual pages */
+  .content-image {
+    right: 50px;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .content-info {
+    left: 125px;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1152px) {
+  /* NOTE: Footer floats */
+  .footer--wrap {
+    width: 55%;
+    float: left;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .footer--epilogue {
+    width: 45%;
+    float: left;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .footer--social {
+    width: 25%;
+    float: left;
+    text-align: center;
+  }
+  .footer--copy {
+    text-align: right;
+    width: 75%;
+    float: left;
+    margin-left: auto;
+  }
+  /* NOTE: sections/individual pages */
+  .content-image {
+    right: 50px;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .content-info {
+    left: 100px;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+}
+
+@media (min-width: 772px) and (max-width: 992px) {
+  h2 {
+    font-size: 1.5rem;
+    max-width: 360px;
+    width: 100%;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  h3 {
+    font-size: .675rem;
+    letter-spacing: .11rem;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  /* NOTE: Footer floats */
+  .footer--wrap {
+    width: 55%;
+    float: left;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .footer--epilogue {
+    width: 45%;
+    float: left;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .footer--social {
+    width: 30%;
+    float: left;
+  }
+  .footer--copy {
+    width: 70%;
+    float: left;
+    margin-left: auto;
+  }
+  .content-image {
+    width: 48%;
+    position: absolute;
+    float: right;
+    padding: 20px 1%;
+    right: 50px;
+    top: 0px;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    img {
+      width: 80%;
+      position: relative;
+      display: block;
+      margin: 0px auto;
+      transition: all .5s ease;
+      -webkit-transition: all .5s ease;
+      -moz-transition: all .5s ease;
+      -ms-transition: all .5s ease;
+    }
+  }
+  .content-info {
+    width: 48%;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    float: right;
+    padding: 20px 1%;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    p {
+      max-width: 70%;
+      transition: all .5s ease;
+      -webkit-transition: all .5s ease;
+      -moz-transition: all .5s ease;
+      -ms-transition: all .5s ease;
+    }
+  }
+}
+
+@media (min-width: 500px) and (max-width: 772px) {
+  /* NOTE: Backgrounds */
+  .lorem-texture {
+    bottom: 130px;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .Signs-texture {
+    position: fixed;
+    right: -50px;
+    top: -30px;
+    background-size: 90%;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  h2 {
+    font-size: 1.5rem;
+    max-width: 360px;
+    width: 100%;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  h3 {
+    font-size: .675rem;
+    letter-spacing: .11rem;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  /* NOTE: logo */
+  .icon-aura-crate-mark {
+    font-size: 5.5rem;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  /* NOTE: Footer floats */
+  footer {
+    background-color: rgba(255, 255, 255, 0.75);
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .footer--wrap {
+    width: 70%;
+    float: left;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .footer--epilogue {
+    width: 30%;
+    float: left;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .footer--social {
+    width: 100%;
+    float: none;
+    text-align: right;
+  }
+  .footer--copy {
+    text-align: right;
+    width: 70%;
+    float: none;
+    margin-left: auto;
+  }
+  .content-image {
+    width: 48%;
+    position: relative;
+    float: none;
+    padding: 20px 2%;
+    right: 0px;
+    top: 0px;
+    margin: 0px auto;
+    margin-top: -50px;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .content-info {
+    width: 48%;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    float: none;
+    padding: 20px 1%;
+    margin: 0px auto;
+    margin-top: 0px;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    p {
+      max-width: 100%;
+      transition: all .5s ease;
+      -webkit-transition: all .5s ease;
+      -moz-transition: all .5s ease;
+      -ms-transition: all .5s ease;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  /* NOTE: Backgrounds */
+  .subtle-image-texture {
+    background-position: center;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .lorem-texture {
+    bottom: 100px;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .Signs-texture {
+    position: fixed;
+    right: -140px;
+    top: -30px;
+    padding: 30px 0px;
+    background-size: 90%;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  h2 {
+    font-size: 1.5rem;
+    max-width: 360px;
+    width: 100%;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  h3 {
+    font-size: .675rem;
+    letter-spacing: .11rem;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  header {
+    clear: both;
+    position: fixed;
+    top: 0px;
+    padding-bottom: 20px;
+    z-index: 1;
+  }
+  /* NOTE: logo */
+  .icon-aura-crate-mark {
+    font-size: 5.5rem;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  /* NOTE: all links  */
+  a {
+    font-size: .6875rem;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  /* NOTE: Footer floats */
+  footer {
+    background-color: rgba(255, 255, 255, 0.75);
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .footer--wrap {
+    width: 100%;
+    float: none;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .footer--epilogue {
+    width: 100%;
+    float: none;
+    padding-bottom: 15px;
+    text-align: center;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .footer--social {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+  .footer--copy {
+    text-align: center;
+    width: 100%;
+    float: none;
+    margin-left: auto;
+  }
+  .content-image {
+    width: 65%;
+    position: relative;
+    float: none;
+    padding: 0px 0%;
+    right: 0px;
+    top: 0px;
+    margin: 0px auto;
+    margin-top: -20px;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+  }
+  .content-info {
+    width: 90%;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    float: none;
+    padding: 20px 40px;
+    margin-top: 0px;
+    margin-left: auto;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    p {
+      max-width: 100%;
+      transition: all .5s ease;
+      -webkit-transition: all .5s ease;
+      -moz-transition: all .5s ease;
+      -ms-transition: all .5s ease;
+    }
+  }
+}
